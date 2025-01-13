@@ -24,8 +24,7 @@
         <div class="navbar-links">
             <ul>
                 <li><a href="#">Domov</a></li>
-                <li><a href="/signup">Registracija</a></li>
-                <li><a href="/login">Prijava</a></li>
+                <li><a href="/prijava">Prijava</a></li>
             </ul>
         </div>
     </nav>

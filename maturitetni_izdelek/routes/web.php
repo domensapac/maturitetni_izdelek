@@ -3,11 +3,21 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SignUp;
 use App\Http\Controllers\LogIn;
+use App\Http\Controllers\AdminController;
 
-Route::get('/login', [LogIn::class, 'logIn']); 
-
-Route::get('/signup', [SignUp::class, 'signUp']); 
-
-Route::get('/', function () {
-    return view('welcome');
+//do 'welcome' dostopaš samo če si prijavljen, če ne te vrže na login
+Route::middleware("auth")->group(function(){
+    Route::view("/", "welcome")
+    ->name("welcome");
 });
+
+Route::get('/prijava', [LogIn::class, 'logIn'])
+    ->name("login"); 
+Route::post('/prijava', [LogIn::class, 'logInPost'])
+    ->name("login.post"); 
+
+Route::get('/admin', [AdminController::class, 'admin'])
+    ->name("admin");
+Route::post('/admin', [AdminController::class, 'adminPost'])
+    ->name("admin.post"); 
+

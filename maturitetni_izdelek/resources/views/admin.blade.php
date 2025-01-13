@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login</title>
+    <title>Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body>
@@ -22,10 +22,14 @@
         @if(session()->has("error")) 
           <div class="alert alert-success">{{session()->get("error")}}</div>
         @endif
-        <form method="POST" action="{{ route('login.post') }}">
+        <form method="POST" action="{{ route('admin.post') }}">
             @csrf
+            <div data-mdb-input-init class="form-outline mb-4">
+            <input type="text" id="form1Example13"  class="form-control form-control-lg" name="name" required autofocus/>
+            <label class="form-label" for="form1Example13">Ime</label>
+          </div>
           <div data-mdb-input-init class="form-outline mb-4">
-            <input type="text" id="form1Example13" class="form-control form-control-lg" name="email" required autofocus/>
+            <input type="text" id="form1Example13"  class="form-control form-control-lg" name="email" required/>
             <label class="form-label" for="form1Example13">Email naslov</label>
           </div>
 
@@ -34,7 +38,7 @@
             <label class="form-label" for="form1Example23">Geslo</label>
           </div>
           <div class=" d-flex align-items-center justify-content-center">
-          <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg btn-block ">Prijava</button>
+          <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg btn-block ">Dodaj</button>
           </div>
         </form>
       </div>
