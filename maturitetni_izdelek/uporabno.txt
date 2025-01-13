@@ -1,0 +1,16 @@
+CREATING PROJECT
+composer create-project laravel/laravel project-name
+cd project-name
+
+HOST
+php artisan serve
+
+MIGRATE ZA BAZO
+php artisan migrate
+
+TAILWIND
+npm install
+npm run dev
+
+CREATE CONTROLLER
+php artisan make:controller MyController
