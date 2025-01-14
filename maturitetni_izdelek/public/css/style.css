@@ -62,6 +62,19 @@ body {
     border-radius: 10px;
 }
 
+.qr_container {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    justify-content: center;
+    width: 70%;
+    margin-top: auto;
+    height: 80vh;
+}
+
+.qr_pic {
+}
+
 @media (max-width: 600px) {
     .toggle-button {
         display: flex;

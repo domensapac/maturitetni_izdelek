@@ -34,7 +34,7 @@
             <label class="form-label" for="form1Example23">Geslo</label>
           </div>
           <div class=" d-flex align-items-center justify-content-center">
-          <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg btn-block ">Prijava</button>
+          <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg btn-block" style="background-color:#333">Prijava</button>
           </div>
         </form>
       </div>

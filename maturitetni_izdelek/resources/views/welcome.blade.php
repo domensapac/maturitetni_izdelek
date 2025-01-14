@@ -10,6 +10,7 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" /> 
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        
     </head>
     
 <body>
@@ -24,11 +25,20 @@
         <div class="navbar-links">
             <ul>
                 <li><a href="#">Domov</a></li>
-                <li><a href="/prijava">Prijava</a></li>
+                <li><a href="{{ route('logout') }}">Odjava</a></li>
             </ul>
         </div>
     </nav>
 
+<section>
+
+<div class="qr_container">
+    <div class="qr_pic">
+        <span>SLIKA QR KODE</span>
+    </div>
+</div>
+
+</section>
 
 <script src="{{ asset('js/script.js') }}"></script>
 </body>

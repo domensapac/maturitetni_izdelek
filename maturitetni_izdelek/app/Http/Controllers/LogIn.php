@@ -21,8 +21,11 @@ class LogIn extends Controller
             return redirect()->intended(route("welcome")); //po prijavi te vrže na welcome
         }
         return redirect(route("login"))
-            ->with("error", "Login failed"); 
+            ->with("error", "Neuspešna prijava"); 
     }
+
+
+    
 
     
 }

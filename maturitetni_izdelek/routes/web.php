@@ -21,3 +21,10 @@ Route::get('/admin', [AdminController::class, 'admin'])
 Route::post('/admin', [AdminController::class, 'adminPost'])
     ->name("admin.post"); 
 
+Route::get('/logout', function () {
+    Auth::logout(); 
+    Session::flush();
+    return redirect('/prijava'); 
+})->name('logout');
+    
+
