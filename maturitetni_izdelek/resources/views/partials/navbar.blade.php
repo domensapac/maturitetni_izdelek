@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -10,21 +12,26 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" /> 
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        
     </head>
     
 <body>
 
-@include('partials.navbar')
-
-<section>
-
-<div class="qr_container">
-    <div class="qr_pic">
-        <span>SLIKA QR KODE</span>
-    </div>
-</div>
-
-</section>
+<nav class="navbar"> 
+        <div class="brand-title">SPTŠ</div>
+        <a href="#" class="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+            <ul>
+                <li><a href="/">Domov</a></li>
+                <li><a href="{{ route('jedilnik') }}">Jedilnik</a></li>
+                <li><a href="{{ route('logout') }}">Odjava</a></li>
+            </ul>
+        </div>
+</nav>
 
 <script src="{{ asset('js/script.js') }}"></script>
 </body>

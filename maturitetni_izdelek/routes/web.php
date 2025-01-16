@@ -11,6 +11,11 @@ Route::middleware("auth")->group(function(){
     ->name("welcome");
 });
 
+Route::get('/jedilnik', function(){
+    return view('jedilnik');
+    })->name("jedilnik"); 
+
+
 Route::get('/prijava', [LogIn::class, 'logIn'])
     ->name("login"); 
 Route::post('/prijava', [LogIn::class, 'logInPost'])
