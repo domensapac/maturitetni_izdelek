@@ -19,6 +19,7 @@
 
 <section>
 <div class="displayed_content">
+
     <div class="qr_container">
         <div class="qr_pic">
             <span>SLIKA QR KODE</span>

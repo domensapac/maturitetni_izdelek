@@ -15,6 +15,10 @@ Route::get('/jedilnik', function(){
     return view('jedilnik');
     })->name("jedilnik"); 
 
+Route::get('/racun', function(){
+    return view('racun');
+    })->name("racun"); 
+
 
 Route::get('/prijava', [LogIn::class, 'logIn'])
     ->name("login"); 

@@ -27,6 +27,7 @@
                 <li><a href="/">Domov</a></li>
                 <li><a href="/">Novice</a></li>
                 <li><a href="{{ route('jedilnik') }}">Jedilnik</a></li>
+                <li><a href="{{ route('racun') }}">Račun</a></li>
                 <li><a href="{{ route('logout') }}">Odjava</a></li>
             </ul>
         </div>
