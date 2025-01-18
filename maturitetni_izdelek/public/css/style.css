@@ -7,7 +7,7 @@ body {
     padding: 0;
 }
 
-.navbar {
+.navbar1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -16,23 +16,23 @@ body {
     min-height: 80px;
 }
 
-.brand-title {
+.brand-title1 {
     font-size: 2rem;
     margin: 1rem;
     margin-left: 1.5rem;
 }
 
-.navbar-links ul {
+.navbar-links1 ul {
     margin: 0;
     padding: 0;
     display: flex;
 }
 
-.navbar-links li {
+.navbar-links1 li {
     list-style: none;
 }
 
-.navbar-links li a {
+.navbar-links1 li a {
     font-size: 1.2rem;
     text-decoration: none;
     color: white;
@@ -40,11 +40,11 @@ body {
     display: block;
 }
 
-.navbar-links li:hover {
+.navbar-links1 li:hover {
     background-color: #555;
 }
 
-.toggle-button {
+.toggle-button1 {
     position: absolute;
     top: 1.5rem;
     right: 1.5rem;
@@ -55,7 +55,7 @@ body {
     height: 21px;
 }
 
-.toggle-button .bar {
+.toggle-button1 .bar {
     height: 3px;
     width: 100%;
     background-color: white;
@@ -68,42 +68,47 @@ body {
     margin: auto;
     justify-content: center;
     width: 70%;
-    margin-top: auto;
+    overflow: hidden;
     height: 80vh;
 }
 
 .qr_pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
 }
 
 @media (max-width: 600px) {
-    .toggle-button {
+    .toggle-button1 {
         display: flex;
     }
 
-    .navbar-links {
+    .navbar-links1 {
         display: none;
         width: 100%;
     }
 
-    .navbar {
+    .navbar1 {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .navbar-links ul {
+    .navbar-links1 ul {
         width: 100%;
         flex-direction: column;
     }
 
-    .navbar-links li {
+    .navbar-links1 li {
         text-align: center;
     }
 
-    .navbar-links li a {
+    .navbar-links1 li a {
         padding: 0.5rem 1rem;
     }
 
-    .navbar-links.active {
+    .navbar-links1.active {
         display: flex;
     }
 }

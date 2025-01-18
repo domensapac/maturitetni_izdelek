@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -17,16 +15,17 @@
     
 <body>
 
-<nav class="navbar"> 
-        <div class="brand-title">SPTŠ</div>
-        <a href="#" class="toggle-button">
+<nav class="navbar1"> 
+        <div class="brand-title1">SPTŠ</div>
+        <a href="#" class="toggle-button1">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </a>
-        <div class="navbar-links">
+        <div class="navbar-links1">
             <ul>
                 <li><a href="/">Domov</a></li>
+                <li><a href="/">Novice</a></li>
                 <li><a href="{{ route('jedilnik') }}">Jedilnik</a></li>
                 <li><a href="{{ route('logout') }}">Odjava</a></li>
             </ul>

@@ -11,21 +11,27 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" /> 
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     </head>
-    
 <body>
 
-@include('partials.navbar')
+<section>
+    @include('partials.navbar')
+</section>
 
 <section>
-
-<div class="qr_container">
-    <div class="qr_pic">
-        <span>SLIKA QR KODE</span>
+<div class="displayed_content">
+    <div class="qr_container">
+        <div class="qr_pic">
+            <span>SLIKA QR KODE</span>
+        </div>
     </div>
 </div>
+</section>
 
+<section>
+    @include('partials.footer')
 </section>
 
 <script src="{{ asset('js/script.js') }}"></script>
+
 </body>
 </html>
