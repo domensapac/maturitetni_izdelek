@@ -6,9 +6,8 @@ use App\Http\Controllers\LogIn;
 use App\Http\Controllers\AdminController;
 
 //do 'welcome' dostopaš samo če si prijavljen, če ne te vrže na login
-Route::middleware("auth")->group(function(){
-    Route::view("/", "welcome")
-    ->name("welcome");
+Route::middleware("auth")->group(function () {
+    Route::get("/", [AdminController::class, 'generateQRCode'])->name("welcome");
 });
 
 Route::get('/jedilnik', function(){
@@ -27,6 +26,7 @@ Route::post('/prijava', [LogIn::class, 'logInPost'])
 
 Route::get('/admin', [AdminController::class, 'admin'])
     ->name("admin");
+
 Route::post('/admin', [AdminController::class, 'adminPost'])
     ->name("admin.post"); 
 

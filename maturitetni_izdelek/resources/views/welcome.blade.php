@@ -22,7 +22,7 @@
 
     <div class="qr_container">
         <div class="qr_pic">
-            <span>SLIKA QR KODE</span>
+            {!! $qrCode !!} 
         </div>
     </div>
 </div>
