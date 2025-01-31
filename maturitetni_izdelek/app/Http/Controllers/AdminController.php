@@ -28,16 +28,24 @@ class AdminController extends Controller
         $user = new User(); 
         $user->name = $request->name; 
         $user->surname = $request->surname; 
-        $user->email = $request->email; 
+        $user->email = $request->email;
         $user->password = Hash::make($randomPassword);
 
+        $AliJeMail = $request->email; //preverjanje e-maila
 
-        if($user->save()){
-            return redirect(route("login")) 
-                ->with("success", "User created successfully");
+
+        if(filter_var($AliJeMail, FILTER_VALIDATE_EMAIL))
+        {
+            if($user->save()){
+                return redirect(route("login")) 
+                    ->with("success", "User created successfully");
+            }
+            return redirect("admin"())
+                ->with("error", "Failer to create account");
+        }else{
+            echo "Vnešeni e-mail ni veljaven";
+            //return redirect("admin"())
         }
-        return redirect("admin"())
-            -with("error", "Failer to create account");
     }
 
     public function generateQRCode()
