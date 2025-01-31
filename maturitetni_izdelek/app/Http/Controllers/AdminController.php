@@ -37,14 +37,14 @@ class AdminController extends Controller
         if(filter_var($AliJeMail, FILTER_VALIDATE_EMAIL))
         {
             if($user->save()){
-                return redirect(route("login")) 
-                    ->with("success", "User created successfully");
+                return redirect(route("admin")) 
+                    ->with("uspeh", "Uporabnik uspešno dodan.");
             }
-            return redirect("admin"())
-                ->with("error", "Failer to create account");
+            return redirect(route("admin"))
+                ->with("error", "Napaka pri dodajanju.");
         }else{
-            echo "Vnešeni e-mail ni veljaven";
-            //return redirect("admin"())
+            return redirect(route("admin"))
+                ->with("error", "Vnešen neveljaven email.");
         }
     }
 
@@ -53,9 +53,9 @@ class AdminController extends Controller
         //Jure je pogledno
         $user = Auth::user();
 
-        $data = "ID: {$user->id}, Name: {$user->name}, Last Name: {$user->last_name}";
+        $data = "USER ID: {$user->id}";
 
-        $qrCode = QrCode::size(200)->generate($data);
+        $qrCode = QrCode::size(300)->generate($data);
 
         return view('welcome', compact('qrCode'));
     }

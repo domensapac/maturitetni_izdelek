@@ -17,10 +17,10 @@
       </div>
       <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
         @if(session()->has("success")) 
-          <div class="alert alert-success">{{session()->get("success")}}</div>
+          <div class="alert alert-success">{{session()->get("uspeh")}}</div>
         @endif
         @if(session()->has("error")) 
-          <div class="alert alert-success">{{session()->get("error")}}</div>
+          <div class="alert alert-danger">{{session()->get("error")}}</div>
         @endif
         <form method="POST" action="{{ route('login.post') }}">
             @csrf
