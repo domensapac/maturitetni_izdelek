@@ -11,6 +11,7 @@ class LogIn extends Controller
         return view('login'); 
     }
 
+    
     function logInPost(Request $request){
         $request->validate([
             "email" => "required",
@@ -24,8 +25,4 @@ class LogIn extends Controller
             ->with("error", "Neuspešna prijava"); 
     }
 
-    
-    
-
-    
 }

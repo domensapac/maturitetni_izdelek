@@ -29,7 +29,8 @@ class AdminController extends Controller
         $user->name = $request->name; 
         $user->surname = $request->surname; 
         $user->email = $request->email;
-        #$user->password = Hash::make($randomPassword);
+        $user->temp_password = $randomPassword;
+        $user->password = Hash::make($randomPassword);
         $user->password = $randomPassword;
 
         $AliJeMail = $request->email; //preverjanje e-maila
