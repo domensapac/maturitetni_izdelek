@@ -24,8 +24,12 @@ Route::get('/prijava', [LogIn::class, 'logIn'])
 Route::post('/prijava', [LogIn::class, 'logInPost'])
     ->name("login.post"); 
 
-Route::get('/admin', [AdminController::class, 'admin'])
-    ->name("admin");
+Route::get('/admin', function () {
+    abort_if(!Auth::check() || Auth::user()->admin != 1, 403, 'Nimaš dostopa!');
+    
+    return view('admin'); // Ali klic kontrolerja
+})->name("admin");
+
 
 Route::post('/admin', [AdminController::class, 'adminPost'])
     ->name("admin.post"); 
