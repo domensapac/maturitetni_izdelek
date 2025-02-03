@@ -21,6 +21,7 @@ Route::get('/racun', function(){
 
 Route::get('/prijava', [LogIn::class, 'logIn'])
     ->name("login"); 
+    
 Route::post('/prijava', [LogIn::class, 'logInPost'])
     ->name("login.post"); 
 
