@@ -33,17 +33,27 @@ class AdminController extends Controller
         $user->password = Hash::make($randomPassword);
         $AliJeMail = $request->email; //preverjanje e-maila
 
-        if(filter_var($AliJeMail, FILTER_VALIDATE_EMAIL))
+        $MailObstaja = User::where('email', $request->email)->exists();
+
+        if($MailObstaja)
         {
-            if($user->save()){
-                return redirect(route("admin")) 
-                    ->with("uspeh", "Uporabnik uspešno dodan.");
+            return redirect(route("admin"))
+                ->with("error", "Email, ki ga poskušate vnesti že obstaja");
+        }
+        else
+        {
+            if(filter_var($AliJeMail, FILTER_VALIDATE_EMAIL))
+            {
+                if($user->save()){
+                    return redirect(route("admin")) 
+                        ->with("uspeh", "Uporabnik uspešno dodan.");
+                }
+                return redirect(route("admin"))
+                    ->with("error", "Napaka pri dodajanju.");
+            }else{
+                return redirect(route("admin"))
+                    ->with("error", "Vnešen neveljaven email.");
             }
-            return redirect(route("admin"))
-                ->with("error", "Napaka pri dodajanju.");
-        }else{
-            return redirect(route("admin"))
-                ->with("error", "Vnešen neveljaven email.");
         }
     }
 
