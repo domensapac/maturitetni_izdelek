@@ -14,7 +14,7 @@
 </section>
 
 <div class="displayed_content">
-    <h1>JEDILNIK</h1>
+    <h1>Dodatno</h1>
 </div>
 
 <section>

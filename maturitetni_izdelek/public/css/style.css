@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-family: "Outfit", sans-serif !important;
 }
 
 body {
@@ -65,19 +66,26 @@ body {
 .qr_container {
     display: flex;
     align-items: center;
-    margin: auto;
     justify-content: center;
     width: 70%;
+    max-width: 600px;
+    height: auto;
+    min-height: 50vh;
+    margin: auto;
     overflow: hidden;
-    height: 80vh;
 }
 
 .qr_pic {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: auto;
     max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .displayed_content {
@@ -93,7 +101,17 @@ body {
     text-align: center;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
+    .qr_container {
+        width: 90%;
+        min-height: 30vh;
+    }
+
+    .qr_pic {
+        max-width: 80%;
+        min-height: auto;
+    }
+
     .toggle-button1 {
         display: flex;
     }

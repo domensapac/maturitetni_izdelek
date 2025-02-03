@@ -6,17 +6,15 @@
 
         <title>Laravel</title>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" /> 
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}"> 
     </head>
-    
 <body>
 
 <nav class="navbar1"> 
-        <div class="brand-title1">SPTŠ</div>
+        <div class="brand-title1" style="font-family:Outfit">MojBon</div>
         <a href="#" class="toggle-button1">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -24,9 +22,9 @@
         </a>
         <div class="navbar-links1">
             <ul>
-                <li><a href="/">Domov</a></li>
+                <li ><a href="/">Domov</a></li>
                 <li><a href="/">Novice</a></li>
-                <li><a href="{{ route('jedilnik') }}">Jedilnik</a></li>
+                <li><a href="{{ route('dodatno') }}">Dodatno</a></li>
                 <li><a href="{{ route('racun') }}">Račun</a></li>
                 <li><a href="{{ route('logout') }}">Odjava</a></li>
             </ul>

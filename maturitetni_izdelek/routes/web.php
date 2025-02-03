@@ -10,9 +10,9 @@ Route::middleware("auth")->group(function () {
     Route::get("/", [AdminController::class, 'generateQRCode'])->name("welcome");
 });
 
-Route::get('/jedilnik', function(){
-    return view('jedilnik');
-    })->name("jedilnik"); 
+Route::get('/dodatno', function(){
+    return view('dodatno');
+    })->name("dodatno"); 
 
 Route::get('/racun', function(){
     return view('racun');
@@ -26,7 +26,7 @@ Route::post('/prijava', [LogIn::class, 'logInPost'])
     ->name("login.post"); 
 
 Route::get('/admin', function () {
-    abort_if(!Auth::check() || Auth::user()->admin != 1, 403, 'Nimaš dostopa!');
+    abort_if(!Auth::check() || Auth::user()->admin != 1, 403, 'Nimaš dostopa!'); //dostop do /admin
     
     return view('admin'); // Ali klic kontrolerja
 })->name("admin");
