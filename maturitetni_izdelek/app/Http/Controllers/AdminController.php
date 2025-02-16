@@ -62,7 +62,7 @@ class AdminController extends Controller
         //Jure je pogledno
         $user = Auth::user();
 
-        $data = "USER ID: {$user->id}";
+        $data = "{$user->id}";
 
         $qrCode = QrCode::size(300)->generate($data);
 

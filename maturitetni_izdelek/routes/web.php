@@ -4,10 +4,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SignUp;
 use App\Http\Controllers\LogIn;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\QRScanController;
+
 
 //do 'welcome' dostopaš samo če si prijavljen, če ne te vrže na login
 Route::middleware("auth")->group(function () {
     Route::get("/", [AdminController::class, 'generateQRCode'])->name("welcome");
+
+    Route::post('/qr-scan', [QRScanController::class, 'store'])->name('qr.scan');
+
 });
 
 Route::get('/dodatno', function(){
