@@ -12,6 +12,12 @@ use App\Http\Controllers\RacunController;
 Route::middleware("auth")->group(function () {
     Route::get("/", [AdminController::class, 'generateQRCode'])->name("welcome");
 
+    Route::get('/qrscan', function () {
+        abort_if(!Auth::check() || Auth::user()->admin != 1, 403, 'Nimaš dostopa!'); //dostop do /qrscan
+        
+        return view('qr_scan'); // Ali klic kontrolerja
+    })->name("qrscan");
+
     Route::post('/qr-scan', [QRScanController::class, 'store'])->name('qr.scan');
 
 });

@@ -7,7 +7,8 @@ use App\Models\User;
 use App\Models\QRScan; // Model QRScan, ki smo ga prej ustvarili
 
 class QRScanController extends Controller
-{public function store(Request $request)
+{
+    public function store(Request $request)
     {
         // Validacija, da je 'user_id' prisoten
         $request->validate([
