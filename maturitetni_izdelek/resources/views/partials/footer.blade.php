@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<div class="footer-conntainer" style="background-color: #333; ">
+<div class="footer-conntainer" style="background-color: #333333">
     <div class="container" >
     <footer class="py-3 mt-4">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">

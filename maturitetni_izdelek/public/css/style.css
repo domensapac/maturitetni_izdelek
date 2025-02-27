@@ -12,7 +12,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
     color: white;
     min-height: 80px;
 }

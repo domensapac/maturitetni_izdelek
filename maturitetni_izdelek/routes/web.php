@@ -6,7 +6,7 @@ use App\Http\Controllers\LogIn;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\QRScanController;
 use App\Http\Controllers\RacunController;
-
+use App\Http\Controllers\OdjaviMalico;
 
 //do 'welcome' dostopaš samo če si prijavljen, če ne te vrže na login
 Route::middleware("auth")->group(function () {
@@ -22,9 +22,12 @@ Route::middleware("auth")->group(function () {
 
 });
 
-Route::get('/dodatno', function(){
-    return view('dodatno');
-    })->name("dodatno"); 
+//route za odjavo malice
+Route::get('/odjavi', [OdjaviMalico::class, 'odjavi'])
+    ->name("odjavi"); 
+    
+Route::post('/odjavi', [OdjaviMalico::class, 'OdjaviMalico'])
+    ->name("odjavi.post"); 
 
 //route za racun
 Route::get('/racun', function(){

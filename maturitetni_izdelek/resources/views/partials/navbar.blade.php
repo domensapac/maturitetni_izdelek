@@ -13,7 +13,7 @@
     </head>
 <body>
 
-<nav class="navbar1"> 
+<nav class="navbar1 " style="background-color: #333"> 
         <div class="brand-title1" style="font-family:Outfit">MojBon</div>
         <a href="#" class="toggle-button1">
             <span class="bar"></span>
@@ -24,7 +24,7 @@
             <ul>
                 <li ><a href="/">Domov</a></li>
                 <li><a href="/">Novice</a></li>
-                <li><a href="{{ route('dodatno') }}">Dodatno</a></li>
+                <li><a href="{{ route('odjavi') }}">Odjavi malico</a></li>
                 <li><a href="{{ route('racun') }}">Račun</a></li>
                 <li><a href="{{ route('logout') }}">Odjava</a></li>
             </ul>
