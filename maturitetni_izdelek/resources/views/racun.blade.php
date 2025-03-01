@@ -22,6 +22,13 @@
 
 <form method="POST" action="{{ route('racun.post') }}">
     @csrf
+    @if(session()->has("success")) 
+        <div class="alert alert-success">{{session()->get("success")}}</div>
+    @endif
+    @if(session()->has("error")) 
+        <div class="alert alert-danger">{{session()->get("error")}}</div>
+    @endif
+
     <div data-mdb-input-init class="form-outline mb-4">
         <input type="text" id="form1Example13"  class="form-control form-control-lg" name="email" required autofocus/>
         <label class="form-label" for="form1Example13">Email naslov</label>

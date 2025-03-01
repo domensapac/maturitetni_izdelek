@@ -19,38 +19,37 @@ class RacunController extends Controller
     function RacunPost(Request $request){
         $request->validate([
             "email" => "required",
-            //"password" => "required",
+            "password" => "required",
             "newpassword" => "required",
         ]);
 
         $user = User::where('email', $request->email)->first();
 
         if(!$user){
-            echo "Email, kateremu skušate spremeniti geslo, ne obstaja";
-            /*
-            return back()
-                ->with("error", "Email, kateremu skušate spremeniti geslo, ne obstaja");
-            */
+            return redirect(route("racun"))
+                ->with("error", "Email, ne obstaja");
         }
         else
         {
-           $user->password = Hash::Make($request->newpassword);
-           if($user->save())
-           {
-                echo "Uspešno spremenjeno geslo";
-                /*
+            if(Hash::check($request->password, $user->password))
+            {
+                $user->password = Hash::Make($request->newpassword);
+                if($user->save())
+                {    
+                    return redirect(route("racun"))
+                        ->with("success", "Usprešno ste si spremenili geslo.");   
+                }
+                else
+                {        
+                    return back()
+                        ->with("error", "Napaka pri shranjevanju novega gesla");
+                }
+            }
+            else
+            {               
                 return redirect(route("racun"))
-                    ->with("uspeh", "Uspešno");
-                */
-           }
-           else
-           {
-                echo "Napaka pri shranjevanju gesla";
-                /*
-                return back()
-                    ->with("error", "Napaka pri shranjevanju novega gesla");
-                */
-           }
+                    ->with("error", "Vnešeno trenutno geslo se ne ujema z vašim trenutnim geslom"); 
+            }
         }
     }
 }
