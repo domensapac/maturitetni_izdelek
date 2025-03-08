@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Hash;
 use App\Models\User; 
+use App\Models\CheckOut; 
 use Illuminate\Http\Request;
 use Illuminate\Support\Str; 
 use Illuminate\Support\Facades\Auth;
@@ -59,13 +60,12 @@ class AdminController extends Controller
 
     public function generateQRCode()
     {
-        //Jure je pogledno
         $user = Auth::user();
 
         $data = "{$user->id}";
 
         $qrCode = QrCode::size(300)->generate($data);
-
+              
         return view('welcome', compact('qrCode'));
     }
 

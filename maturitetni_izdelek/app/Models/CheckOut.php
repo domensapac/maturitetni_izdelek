@@ -15,5 +15,5 @@ class CheckOut extends Model
     protected $dates = ['checkout_date']; // Preverite, da je 'checkout_date' vključen v ta seznam
 
     // To so atributi, ki so lahko masovno dodeljeni
-    protected $fillable = ['user_id', ];
+    protected $fillable = ['user_id','checkout_date'];
 }

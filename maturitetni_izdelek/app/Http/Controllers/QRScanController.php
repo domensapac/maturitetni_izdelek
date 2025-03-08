@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Models\QRScan; // Model QRScan, ki smo ga prej ustvarili
+use App\Models\QRScan; 
+use App\Models\CheckOut; 
 
 class QRScanController extends Controller
 {
@@ -29,6 +30,17 @@ class QRScanController extends Controller
                               ->whereDate('scanned_at', $today)
                               ->first();
     
+
+        $malicaOdjavljena = CheckOut::where('user_id', $request->user_id)
+                                    ->whereDate('checkout_date', $today)
+                                    ->first(); 
+                              
+         
+        if ($malicaOdjavljena) {
+            return back()->with('error', 'Malica je za ta datum odjavljena. ');
+        }                            
+
+
         if ($existingScan) {
             // Če je že skeniral, obvestimo uporabnika
             return back()->with('error', 'QR koda je bila že skenirana danes.');
