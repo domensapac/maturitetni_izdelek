@@ -70,5 +70,28 @@
 
 <script src="{{ asset('js/script.js') }}"></script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const otherContent = document.querySelector(".other_content");
+    const footer = document.querySelector("footer");
+
+    const observer = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                    observer.unobserve(entry.target); // Stop observing once visible
+                }
+            });
+        },
+        { threshold: 0.2 } // Trigger when 20% of the element is visible
+    );
+
+    observer.observe(otherContent);
+    observer.observe(footer);
+});
+
+</script>
 </body>
 </html>

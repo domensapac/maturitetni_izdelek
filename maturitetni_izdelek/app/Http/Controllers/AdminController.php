@@ -68,5 +68,4 @@ class AdminController extends Controller
               
         return view('welcome', compact('qrCode'));
     }
-
 }
