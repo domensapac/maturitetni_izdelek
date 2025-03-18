@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('checkouts', function (Blueprint $table) {
             $table->id(); // Primarni ključ
-            $table->unsignedBigInteger('user_id');
+            $table->string('user_id');
             $table->date('checkout_date'); // Spremenjeno na 'date', da shrani samo datum (brez časa)
             $table->timestamps(); // Laravelova created_at in updated_at polja
 
             // Tuji ključ do users tabele (če uporabljaš users tabelo)
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); //če zbrišeš userja se izbrišejo vsi zapisi v qr_scans (->onDelete('cascade'))
+            $table->foreign('user_id')->references('user_stringID')->on('users')->onDelete('cascade'); //če zbrišeš userja se izbrišejo vsi zapisi v qr_scans (->onDelete('cascade'))
         });
     }
 
@@ -30,3 +30,4 @@ return new class extends Migration
         Schema::dropIfExists('checkouts');
     }
 };
+

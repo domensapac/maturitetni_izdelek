@@ -13,11 +13,11 @@ class QRScanController extends Controller
     {
         // Validacija, da je 'user_id' prisoten
         $request->validate([
-            'user_id' => 'required|integer', // Preveri, da je ID uporabnika številka
+            'user_id' => 'required|string', // Preveri, da je ID uporabnika string
         ]);
     
         // Preverimo, ali uporabnik z danim ID-jem obstaja v bazi
-        $user = User::find($request->user_id);
+        $user = User::where($request->user_stringID);
     
         if (!$user) {
             // Če uporabnik ne obstaja, vrnemo napako

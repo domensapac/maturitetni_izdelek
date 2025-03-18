@@ -26,12 +26,18 @@ class AdminController extends Controller
 
         $randomPassword = Str::random(12);
 
+        do {
+            $randomString = Str::random(12);
+        } while (User::where('user_stringID', $randomString)->exists()); //unikaten stringID
+
+
         $user = new User(); 
         $user->name = $request->name; 
         $user->surname = $request->surname; 
         $user->email = $request->email;
         $user->temp_password = $randomPassword;
         $user->password = Hash::make($randomPassword);
+        $user->user_stringID = $randomString; 
         $AliJeMail = $request->email; //preverjanje e-maila
 
         $MailObstaja = User::where('email', $request->email)->exists();
@@ -62,9 +68,10 @@ class AdminController extends Controller
     {
         $user = Auth::user();
 
-        $data = "{$user->id}";
+        $stringID = $user->user_stringID;
 
-        $qrCode = QrCode::size(300)->generate($data);
+
+        $qrCode = QrCode::size(300)->generate($stringID);
               
         return view('welcome', compact('qrCode'));
     }

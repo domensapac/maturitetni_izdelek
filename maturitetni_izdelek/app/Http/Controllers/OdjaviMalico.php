@@ -21,8 +21,9 @@ class OdjaviMalico extends Controller
             'datum' => 'required|date',
         ]);
 
-        $userId = Auth::id();
+        $userId = Auth::user()->user_stringID;
         $datum = \Carbon\Carbon::parse($request->input('datum'))->format('Y-m-d');
+
 
         // Preveri, ali je uporabnik že odjavil malico na ta datum
         $obstojecaOdjava = CheckOut::where('user_id', $userId)
