@@ -42,8 +42,7 @@
     <div class="content_row">
         <div class="text_box">
             <h2>Poskeniraj kodo</h2>
-            <p>
-            Pripravite aplikacijo z vašo QR kodo in jo usmerite proti skenerju. Pomembno je, da je koda jasno vidna in v celoti zajeta v okviru kamere. Ko bo koda uspešno prepoznana, boste prejeli potrditev o skeniranju.            </p>
+            <p>Pripravite aplikacijo z vašo QR kodo in jo usmerite proti skenerju. Pomembno je, da je koda jasno vidna in v celoti zajeta v okviru kamere. Ko bo koda uspešno prepoznana, boste prejeli potrditev o skeniranju.</p>
         </div>
         <div class="image_box">
             <img src="{{ asset('images/app.png') }}" alt="Slika aplikacije">

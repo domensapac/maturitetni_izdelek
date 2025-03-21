@@ -51,9 +51,8 @@ Route::get('/admin', function () {
     return view('admin'); // Ali klic kontrolerja
 })->name("admin");
 
-
 Route::post('/admin', [AdminController::class, 'adminPost'])
-    ->name("admin.post"); 
+    ->name("admin.post");
 
 //route za logout
 Route::get('/logout', function () {

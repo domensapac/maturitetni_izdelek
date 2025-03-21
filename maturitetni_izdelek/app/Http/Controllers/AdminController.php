@@ -18,6 +18,7 @@ class AdminController extends Controller
         return view('admin'); 
     }
 
+    
     function adminPost(Request $request){
         $request->validate([
             "name" => "required",
@@ -60,10 +61,10 @@ class AdminController extends Controller
             }else{
                 return redirect(route("admin"))
                     ->with("error", "Vnešen neveljaven email.");
-            }
+            }   
         }
     }
-
+    
     public function generateQRCode()
     {
         $user = Auth::user();

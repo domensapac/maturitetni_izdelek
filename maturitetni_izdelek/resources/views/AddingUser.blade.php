@@ -7,29 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body>
-  <section>
-    @include('partials.navbar')
-  </section>
-  <h1>Hello admin</h1>
-  <div>
-    <div>
-      <ul>
-        <li>
-          <button>Dodaj Uporabnika</button>
-        </li>
-        <li>
-          <button>Evidenca</button>
-        </li>
-      </ul>
-    </div>
-    <div>
-      <section>
-        @include('AddingUser')
-      </section>
-    </div>
-  </div>
 
-  <!--
   <section class="vh-100">
   <div class="container py-5 h-100">
     <div class="row d-flex align-items-center justify-content-center h-100">
@@ -65,8 +43,8 @@
       </div>
     </div>
   </div>
-  </section
-  !-->
+  </section>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>
