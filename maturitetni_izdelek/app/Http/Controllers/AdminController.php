@@ -15,7 +15,8 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 class AdminController extends Controller
 {
     public function admin(){
-        return view('admin'); 
+        $prikaz = 0;
+        return view('admin', compact("prikaz")); 
     }
 
     

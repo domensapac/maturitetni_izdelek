@@ -54,11 +54,19 @@ Route::get('/admin', function () {
 Route::post('/admin', [AdminController::class, 'adminPost'])
     ->name("admin.post");
 
+//addingUser
+Route::get('/adding-user', function () {
+    return view('AddingUser');
+})->name('addingUser');
+
+//Records
+Route::get('/records', function () {
+    return view('Records');
+})->name('records');
+
 //route za logout
 Route::get('/logout', function () {
     Auth::logout(); 
     Session::flush();
     return redirect('/prijava'); 
 })->name('logout');
-    
-

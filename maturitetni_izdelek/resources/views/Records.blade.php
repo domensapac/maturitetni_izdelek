@@ -6,6 +6,6 @@
         <title>Records</title>
     </head>
     <body>
-        <p>Hello</p>
+        <h1>RECORDS</h1>
     </body>
 </html>
