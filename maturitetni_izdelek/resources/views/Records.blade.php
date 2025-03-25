@@ -7,5 +7,6 @@
     </head>
     <body>
         <h1>RECORDS</h1>
+        <a href="{{ route('admin.export.qr-scans') }} " class="btn btn-primary">Izvozi evidenco malic</a>
     </body>
 </html>

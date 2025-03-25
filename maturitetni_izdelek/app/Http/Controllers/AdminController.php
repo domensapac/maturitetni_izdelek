@@ -9,7 +9,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str; 
 use Illuminate\Support\Facades\Auth;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
-
+use App\Exports\QRScansExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 
 class AdminController extends Controller
@@ -76,5 +77,10 @@ class AdminController extends Controller
         $qrCode = QrCode::size(300)->generate($stringID);
               
         return view('welcome', compact('qrCode'));
+    }
+
+    public function exportQRScans()
+    {
+        return Excel::download(new QRScansExport, 'qr_scans.xlsx');
     }
 }

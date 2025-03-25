@@ -70,3 +70,6 @@ Route::get('/logout', function () {
     Session::flush();
     return redirect('/prijava'); 
 })->name('logout');
+
+//Za Export
+Route::get('/admin/export-qr-scans', [AdminController::class, 'exportQRScans'])->name('admin.export.qr-scans');
