@@ -20,7 +20,7 @@
 </section>
 
 <section>
-<div class="displayed_content">
+<div class="displayed_content border-btm">
 
     <p class="user_name"> {{ Auth::user()->name ?? 'Gost' }} {{ Auth::user()->surname ?? '' }} </p>
 
@@ -30,6 +30,11 @@
             {!! $qrCode !!} 
         </div>
     </div>
+
+    <div class="scan-count">
+        <p>Število malic ta mesec: <strong>{{ $scanCount }}</strong></p>
+    </div>
+
 </div>
 </section>
 
@@ -69,6 +74,7 @@
 
 <script src="{{ asset('js/script.js') }}"></script>
 
+<!--
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const otherContent = document.querySelector(".other_content");
@@ -92,5 +98,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 </script>
+-->
+
+
 </body>
 </html>
