@@ -79,8 +79,10 @@ class AdminController extends Controller
         return view('welcome', compact('qrCode'));
     }
 
-    public function exportQRScans()
+    public function exportQRScans(Request $request)
     {
-        return Excel::download(new QRScansExport, 'qr_scans.xlsx');
+        $month = $request->input('month');
+        $year = $request->input('year');
+        return Excel::download(new QRScansExport($month, $year), 'qr_scans.xlsx');
     }
 }
