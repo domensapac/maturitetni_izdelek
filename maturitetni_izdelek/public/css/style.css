@@ -78,6 +78,10 @@ body {
     font-weight: 450;
 }
 
+.scan-count {
+    font-size: 1.5em;
+}
+
 .qr_pic {
     display: flex;
     justify-content: center;
@@ -102,7 +106,7 @@ body {
 }
 
 .other_content {
-    width: 80%;
+    width: 70%;
     margin: auto;
     padding: 40px 0;
     border-top: 1px solid black;
@@ -141,16 +145,25 @@ body {
     border-radius: 10px;
 }
 
+/*
 .other_content {
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
+*/
 @media (max-width: 700px) {
-    .content_row,
-    .reverse {
+    .scan-count {
+        font-size: 1em;
+    }
+
+    .content_row {
         flex-direction: column;
+    }
+
+    .reverse {
+        flex-direction: column-reverse;
         text-align: center;
     }
 

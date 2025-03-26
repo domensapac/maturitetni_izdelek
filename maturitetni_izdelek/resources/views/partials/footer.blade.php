@@ -12,9 +12,9 @@
     <div class="container" >
     <footer class="py-3 mt-4">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Domov</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Novice</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Dodatno</a></li>
+        <li class="nav-item"><a href="/" class="nav-link px-2 text-light">Domov</a></li>
+        <li class="nav-item"><a href="{{ route('racun') }}" class="nav-link px-2 text-light">Račun</a></li>
+        <li class="nav-item"><a href="{{ route('odjavi') }}" class="nav-link px-2 text-light">Dodatno</a></li>
         </ul>
         <p class="text-center text-light">© 2025 Domen Sapac X Jure Zrim</p>
     </footer>

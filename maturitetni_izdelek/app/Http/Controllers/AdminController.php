@@ -8,9 +8,11 @@ use App\Models\CheckOut;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str; 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use App\Exports\QRScansExport;
 use Maatwebsite\Excel\Facades\Excel;
+use Carbon\Carbon;
 
 
 class AdminController extends Controller
@@ -76,7 +78,10 @@ class AdminController extends Controller
 
         $qrCode = QrCode::size(300)->generate($stringID);
               
-        return view('welcome', compact('qrCode'));
+        $scanCount = $this->getMonthlyScanCount();
+
+
+        return view('welcome', compact('qrCode' , 'scanCount'));
     }
 
     public function exportQRScans(Request $request)
@@ -84,5 +89,23 @@ class AdminController extends Controller
         $month = $request->input('month');
         $year = $request->input('year');
         return Excel::download(new QRScansExport($month, $year), 'qr_scans.xlsx');
+    }
+
+    public function getMonthlyScanCount()
+    {
+        $user = Auth::user();
+
+        
+        $currentYear = Carbon::now()->year;
+        $currentMonth = Carbon::now()->month;
+        $currentUser = $user->user_stringID;
+
+
+
+        return DB::table('qr_scans') 
+            ->where('user_id', $currentUser)
+            ->whereYear('scanned_at', $currentYear)
+            ->whereMonth('scanned_at', $currentMonth)
+            ->count();
     }
 }
