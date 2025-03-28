@@ -25,14 +25,19 @@
     <p class="user_name"> {{ Auth::user()->name ?? 'Gost' }} {{ Auth::user()->surname ?? '' }} </p>
 
     <div class="qr_container">
-
         <div class="qr_pic">
-            {!! $qrCode !!} 
+            {!! $qrCode !!}
         </div>
+
+        <!-- Corners -->
+        <div class="corner top-left"></div>
+        <div class="corner top-right"></div>
+        <div class="corner bottom-left"></div>
+        <div class="corner bottom-right"></div>
     </div>
 
     <div class="scan-count">
-        <p>Število malic ta mesec: <strong>{{ $scanCount }}</strong></p>
+        <p>Število malic ta mesec: {{ $scanCount }}</p>
     </div>
 
 </div>
@@ -98,8 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 </script>
--->
-
+!-->
 
 </body>
 </html>

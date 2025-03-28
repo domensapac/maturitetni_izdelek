@@ -29,17 +29,17 @@
         <div class="alert alert-danger">{{session()->get("error")}}</div>
     @endif
 
-    <div data-mdb-input-init class="form-outline mb-4">
+    <div data-mdb-input-init class="form-outline mb-4 barva-okvira-racun">
         <input type="text" id="form1Example13"  class="form-control form-control-lg" name="email" required autofocus/>
         <label class="form-label" for="form1Example13">Email naslov</label>
     </div>
     
-    <div data-mdb-input-init class="form-outline mb-4">
+    <div data-mdb-input-init class="form-outline mb-4 barva-okvira-racun">
         <input type="text" id="form1Example13"  class="form-control form-control-lg" name="password" required/>
         <label class="form-label" for="form1Example13">Geslo</label>
     </div>
 
-    <div data-mdb-input-init class="form-outline mb-4">
+    <div data-mdb-input-init class="form-outline mb-4 barva-okvira-racun">
         <input type="text" id="form1Example13"  class="form-control form-control-lg" name="newpassword" required/>
         <label class="form-label" for="form1Example13">Novo geslo</label>
     </div>

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>MojBon</title>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,8 +13,8 @@
     </head>
 <body>
 
-<nav class="navbar1 " style="background-color: #333"> 
-        <div class="brand-title1" style="font-family:Outfit">MojBon</div>
+<nav class="navbar1 "> 
+        <div class="brand-title1" style="font-family:Outfit"><strong>MojBon.</strong></div>
         <a href="#" class="toggle-button1">
             <span class="bar"></span>
             <span class="bar"></span>

@@ -76,7 +76,10 @@ class AdminController extends Controller
         $stringID = $user->user_stringID;
 
 
-        $qrCode = QrCode::size(300)->generate($stringID);
+        $qrCode = QrCode::size(300)
+            ->color(255,255,255)
+            ->backgroundColor(20, 20, 20)
+            ->generate($stringID);
               
         $scanCount = $this->getMonthlyScanCount();
 
