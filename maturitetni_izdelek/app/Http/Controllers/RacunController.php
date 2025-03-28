@@ -18,38 +18,30 @@ class RacunController extends Controller
 
     function RacunPost(Request $request){
         $request->validate([
-            "email" => "required",
             "password" => "required",
             "newpassword" => "required",
         ]);
 
-        $user = User::where('email', $request->email)->first();
+        $user = Auth::user();
 
-        if(!$user){
-            return redirect(route("racun"))
-                ->with("error", "Email, ne obstaja");
-        }
-        else
+        if(Hash::check($request->password, $user->password))
         {
-            if(Hash::check($request->password, $user->password))
-            {
-                $user->password = Hash::Make($request->newpassword);
-                if($user->save())
-                {    
-                    return redirect(route("racun"))
-                        ->with("success", "Usprešno ste si spremenili geslo.");   
-                }
-                else
-                {        
-                    return back()
-                        ->with("error", "Napaka pri shranjevanju novega gesla");
-                }
+            $user->password = Hash::Make($request->newpassword);
+            if($user->save())
+            {    
+                return redirect(route("racun"))
+                    ->with("success", "Usprešno ste si spremenili geslo.");   
             }
             else
-            {               
-                return redirect(route("racun"))
-                    ->with("error", "Vnešeno trenutno geslo se ne ujema z vašim trenutnim geslom"); 
+            {        
+                return back()
+                    ->with("error", "Napaka pri shranjevanju novega gesla");
             }
+        }
+        else
+        {               
+            return redirect(route("racun"))
+                ->with("error", "Napačno trenutno geslo");
         }
     }
 }

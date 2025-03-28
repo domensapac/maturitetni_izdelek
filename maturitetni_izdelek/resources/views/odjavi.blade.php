@@ -24,7 +24,7 @@
         <br><br>
 
         <div class=" d-flex align-items-center justify-content-center">
-            <button style="background-color:#333;" type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg btn-block ">Odjavi</button>
+            <button style="background-color: rgb(32,32,32); color:white" type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-lg btn-block ">Odjavi</button>
         </div>
     </form>
 

@@ -23,29 +23,24 @@
 <form method="POST" action="{{ route('racun.post') }}">
     @csrf
     @if(session()->has("success")) 
-        <div class="alert alert-success">{{session()->get("success")}}</div>
+        <div class="alert alert-light">{{session()->get("success")}}</div>
     @endif
     @if(session()->has("error")) 
-        <div class="alert alert-danger">{{session()->get("error")}}</div>
+        <div class="alert alert-dark">{{session()->get("error")}}</div>
     @endif
-
-    <div data-mdb-input-init class="form-outline mb-4 barva-okvira-racun">
-        <input type="text" id="form1Example13"  class="form-control form-control-lg" name="email" required autofocus/>
-        <label class="form-label" for="form1Example13">Email naslov</label>
-    </div>
     
     <div data-mdb-input-init class="form-outline mb-4 barva-okvira-racun">
-        <input type="text" id="form1Example13"  class="form-control form-control-lg" name="password" required/>
-        <label class="form-label" for="form1Example13">Geslo</label>
+        <input type="text" id="racunPos"  class="form-control form-control-lg" name="password" required/>
+        <label class="form-label" for="racunPos">Tranutno geslo</label>
     </div>
 
     <div data-mdb-input-init class="form-outline mb-4 barva-okvira-racun">
-        <input type="text" id="form1Example13"  class="form-control form-control-lg" name="newpassword" required/>
-        <label class="form-label" for="form1Example13">Novo geslo</label>
+        <input type="text" id="racunPos"  class="form-control form-control-lg" name="newpassword" required/>
+        <label class="form-label" for="racunPos">Novo geslo</label>
     </div>
 
     <div class=" d-flex align-items-center justify-content-center">
-        <button style="background-color:#333;" type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg btn-block ">Posodobi</button>
+        <button style="background-color: rgb(32,32,32); color:white" type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-lg btn-block ">Posodobi</button>
     </div>
 
 </form>

@@ -15,11 +15,11 @@
 
 <nav class="navbar1 "> 
         <div class="brand-title1" style="font-family:Outfit"><strong>MojBon.</strong></div>
-        <a href="#" class="toggle-button1">
+        <div href="#" class="toggle-button1">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
-        </a>
+        </div>
         <div class="navbar-links1">
             <ul>
                 <li ><a href="/">Domov</a></li>

@@ -52,7 +52,7 @@ body {
 
 .toggle-button1 {
     position: absolute;
-    top: 1.5rem;
+    top: 2rem;
     right: 1.5rem;
     display: none;
     flex-direction: column;
@@ -113,9 +113,6 @@ body {
 .displayed_content h1 {
     width: 100%;
     text-align: center;
-}
-
-.barva-okvira-racun{
 }
 
 .other_content {
