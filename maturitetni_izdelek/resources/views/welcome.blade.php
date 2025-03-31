@@ -25,15 +25,18 @@
     <p class="user_name"> {{ Auth::user()->name ?? 'Gost' }} {{ Auth::user()->surname ?? '' }} </p>
 
     <div class="qr_container">
-        <div class="qr_pic">
-            {!! $qrCode !!}
-        </div>
-
-        <!-- Corners -->
-        <div class="corner top-left"></div>
-        <div class="corner top-right"></div>
-        <div class="corner bottom-left"></div>
-        <div class="corner bottom-right"></div>
+            <svg width="330" height="330" viewBox="0 0 330 330">
+                <!-- L-shaped white borders -->
+                <path d="M 10 60 L 10 10 L 60 10" stroke="white" stroke-width="8" fill="none"/>
+                <path d="M 270 10 L 320 10 L 320 60" stroke="white" stroke-width="8" fill="none"/>
+                <path d="M 10 270 L 10 320 L 60 320" stroke="white" stroke-width="8" fill="none"/>
+                <path d="M 270 320 L 320 320 L 320 270" stroke="white" stroke-width="8" fill="none"/>
+                
+                <!-- QR Code with margin -->
+                <foreignObject x="25" y="25" width="280" height="280">
+                    {!! $qrCode !!}
+                </foreignObject>
+            </svg>
     </div>
 
     <div class="scan-count">
