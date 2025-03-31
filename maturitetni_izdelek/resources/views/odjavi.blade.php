@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" /> 
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <title>Document</title>
+    <title>MojBon</title>
 </head>
 <body>
 
