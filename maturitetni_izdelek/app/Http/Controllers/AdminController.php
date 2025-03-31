@@ -13,6 +13,8 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use App\Exports\QRScansExport;
 use Maatwebsite\Excel\Facades\Excel;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\WelcomeMail;
 
 
 class AdminController extends Controller
@@ -57,6 +59,7 @@ class AdminController extends Controller
             if(filter_var($AliJeMail, FILTER_VALIDATE_EMAIL))
             {
                 if($user->save()){
+                    Mail::to($user->email)->send(new WelcomeMail($user, $randomPassword));
                     return redirect(route("admin")) 
                         ->with("uspeh", "Uporabnik uspešno dodan.");
                 }
