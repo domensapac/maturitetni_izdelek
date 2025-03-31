@@ -79,7 +79,7 @@ class AdminController extends Controller
         $stringID = $user->user_stringID;
 
 
-        $qrCode = QrCode::size(300)
+        $qrCode = QrCode::size(280)
             ->color(255,255,255)
             ->backgroundColor(20, 20, 20)
             ->generate($stringID);

@@ -43,10 +43,10 @@ body {
 }
 
 .navbar-links1 li:hover {
-    background-color: rgb(32,32,32);
+    background-color: rgb(32, 32, 32);
 }
 
-.footer-container{
+.footer-container {
     background-color: rgb(20, 20, 20);
 }
 
@@ -169,7 +169,8 @@ body {
 
 @media (max-width: 700px) {
     .scan-count {
-        font-size: 1em;
+        font-size: 1.3em;
+        margin-top: 30px;
     }
 
     .content_row {
@@ -189,6 +190,8 @@ body {
     .qr_container {
         width: 90%;
         min-height: 30vh;
+        margin-bottom: 10px;
+        margin-top: 10px;
     }
 
     .qr_pic {
@@ -206,7 +209,7 @@ body {
     }
 
     .navbar-links1 li:hover {
-        color: rgb(32,32,32);
+        color: rgb(32, 32, 32);
     }
 
     .navbar1 {
