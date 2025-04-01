@@ -80,8 +80,8 @@ class AdminController extends Controller
 
 
         $qrCode = QrCode::size(280)
-            ->color(255,255,255)
-            ->backgroundColor(20, 20, 20)
+            ->color(0,0,0)
+            ->backgroundColor(255, 255, 255)
             ->generate($stringID);
               
         $scanCount = $this->getMonthlyScanCount();
