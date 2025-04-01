@@ -18,7 +18,7 @@
 
     <form method="POST" action="{{ route('odjavi.post') }}">
         @csrf
-        <label for="datum">Izberi datum in čas:</label>
+        <label for="datum">Izberi datum:</label>
         <input type="date" id="datum" name="datum" required>
 
         <br><br>

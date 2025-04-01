@@ -30,12 +30,12 @@
     @endif
     
     <div data-mdb-input-init class="form-outline mb-4 barva-okvira-racun">
-        <input type="text" id="racunPos"  class="form-control form-control-lg" name="password" required/>
+        <input type="password" id="racunPos"  class="form-control form-control-lg" name="password" required/>
         <label class="form-label" for="racunPos">Tranutno geslo</label>
     </div>
 
     <div data-mdb-input-init class="form-outline mb-4 barva-okvira-racun">
-        <input type="text" id="racunPos"  class="form-control form-control-lg" name="newpassword" required/>
+        <input type="password" id="racunPos"  class="form-control form-control-lg" name="newpassword" required/>
         <label class="form-label" for="racunPos">Novo geslo</label>
     </div>
 

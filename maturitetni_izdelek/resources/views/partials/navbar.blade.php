@@ -23,9 +23,16 @@
         <div class="navbar-links1">
             <ul>
                 <li ><a href="/">Domov</a></li>
-                <li><a href="{{ route('odjavi') }}">Odjavi malico</a></li>
-                <li><a href="{{ route('racun') }}">Račun</a></li>
-                <li><a href="{{ route('logout') }}">Odjava</a></li>
+                @auth
+                    @if(Auth::user()->admin == 1)
+                        <li><a href="{{ route('admin') }}">Admin</a></li>
+                        <li><a href="{{ route('qrscan') }}">Skeniranje</a></li>
+                    @endif
+                @endauth
+
+                    <li><a href="{{ route('odjavi') }}">Odjavi malico</a></li>
+                    <li><a href="{{ route('racun') }}">Račun</a></li>
+                    <li><a href="{{ route('logout') }}">Odjava</a></li>
             </ul>
         </div>
 </nav>
