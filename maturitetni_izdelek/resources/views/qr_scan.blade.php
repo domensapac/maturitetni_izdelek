@@ -24,15 +24,21 @@
         </form>
 
         @if(session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
+            <div class="alert alert-light">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        @if(session('user_name'))
+            <div class="alert alert-light">
+                Skeniral: <strong> {{ session('user_name')}}  </strong>
+            </div>
         @endif
 
         @if(session('error'))
-        <div class="alert alert-danger">
-            {{ session('error') }}
-        </div>
+            <div class="alert alert-dark">
+                {{ session('error') }}
+            </div>
         @endif
     </div>
 
@@ -45,11 +51,11 @@
         let scanTimeout;
 
         // Poslušaj pritiske tipk na celotnem dokumentu
-        document.addEventListener('keydown', function (e) {
+        document.addEventListener('keypress', function (e) {
             clearTimeout(scanTimeout); // Ponastavi timer
 
-            // Filtriraj samo črke (ignoriraj Shift, Ctrl, in druge posebne tipke)
-            if (/^[a-zA-Z]$/.test(e.key)) {
+            // Prepreči zajem posebnih znakov (npr. Enter)
+            if (e.key.length === 1) {
                 scannedCode += e.key;
             }
 
@@ -62,6 +68,8 @@
                 }
             }, 100); // Časovna zakasnitev po skeniranju
         });
+
+
     </script>
 
 </body>
