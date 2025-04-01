@@ -20,7 +20,7 @@
             <span class="bar"></span>
             <span class="bar"></span>
         </div>
-        <div class="navbar-links1">
+        <div id="menu" class="navbar-links1">
             <ul>
                 <li ><a href="/">Domov</a></li>
                 @auth
@@ -36,7 +36,6 @@
             </ul>
         </div>
 </nav>
-
 <script src="{{ asset('js/script.js') }}"></script>
 </body>
 </html>

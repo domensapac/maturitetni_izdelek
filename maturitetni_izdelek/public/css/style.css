@@ -8,6 +8,24 @@ body {
     padding: 0;
 }
 
+.prijava-naslov{
+    font-size: 60px;
+    color: white;
+    text-align: center;
+    width: 550px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.prijava-text{
+    align-items: center;
+    text-align: center;
+}
+
+.prijava-ozadje{
+    background-color: rgb(20, 20, 20);
+    color: white;
+}
+
 .navbar1 {
     display: flex;
     justify-content: space-between;

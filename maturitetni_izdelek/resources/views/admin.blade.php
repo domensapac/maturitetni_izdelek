@@ -8,17 +8,25 @@
   </head>
 
   <body>
+    <section>
+      @include('partials.navbar')
+    </section>
+
     <div class="container text-center">
-        <div class="row align-items-center">
-          <div class="col">
-            <button onclick="setPrikaz(0)" class="btn">Add User</button>
-            <button onclick="setPrikaz(1)" class="btn">View Records</button>
-          </div>
+      <div class="row align-items-center">
+        <div class="col">
+          <button onclick="setPrikaz(0)" class="btn">Add User</button>
+          <button onclick="setPrikaz(1)" class="btn">View Records</button>
+        </div>
           <div id="content" class="col">
             <h2>Izberi funkcijo iz menija</h2>
           </div>
         </div>
-      </div>
+    </div>
+
+    <section>
+      @include('partials.footer')
+    </section>
 
     <script>
       // Initialize prikaz from localStorage or default to 2
@@ -61,7 +69,7 @@
 
       // Initial content load on page refresh
       updateContent();
-  </script>
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
