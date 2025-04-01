@@ -17,7 +17,8 @@ class QRScanController extends Controller
         ]);
     
         // Preverimo, ali uporabnik z danim ID-jem obstaja v bazi
-        $user = User::where($request->user_stringID);
+        $user = User::where('user_stringID', $request->user_id)->first();
+
     
         if (!$user) {
             // Če uporabnik ne obstaja, vrnemo napako
@@ -53,6 +54,8 @@ class QRScanController extends Controller
         ]);
     
         // Po uspešnem skeniranju, vrnemo uporabnika nazaj z obvestilom o uspehu
-        return back()->with('success', 'QR koda je bila uspešno skenirana.');
-    }
+        return back()->with([
+            'success' => "QR koda uspešno skenirana!",
+            'user_name' => "{$user->name} {$user->surname}"
+        ]);    }
 }
