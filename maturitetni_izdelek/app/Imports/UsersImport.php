@@ -26,10 +26,10 @@ class UsersImport implements ToModel,  WithHeadingRow
         } while (User::where('user_stringID', $randomString)->exists());
 
         $user = new User([
-            'name' => $row['name'],
-            'surname' => $row['surname'],
+            'name' => $row['ime'],
+            'surname' => $row['priimek'],
             'email' => $row['email'],
-            'user_stringID' => Str::random(12), // Generate unique ID
+            'user_stringID' => $randomString, // Generate unique ID
             'temp_password' => $temp_password, // Store temp password
             'password' => Hash::make($temp_password), // Store hashed password
             'admin' => 0, // Default to regular user
