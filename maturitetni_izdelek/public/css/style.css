@@ -8,7 +8,7 @@ body {
     padding: 0;
 }
 
-.prijava-naslov{
+.prijava-naslov {
     font-size: 60px;
     color: white;
     text-align: center;
@@ -16,14 +16,17 @@ body {
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-.prijava-text{
+.prijava-text {
     align-items: center;
     text-align: center;
 }
 
-.prijava-ozadje{
+.prijava-ozadje {
     background-color: rgb(20, 20, 20);
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .navbar1 {
@@ -193,6 +196,10 @@ body {
 
     .content_row {
         flex-direction: column;
+    }
+
+    .prijava-container {
+        width: 80%;
     }
 
     .reverse {

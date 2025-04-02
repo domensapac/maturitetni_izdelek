@@ -12,8 +12,8 @@
   <section class="vh-100 prijava-ozadje">
   <div class="container">
     <div class="row d-flex align-items-center justify-content-center h-100">
-      <div class="col-md-7 prijava-naslov"><strong>MojBon.</strong></div>
-      <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1 prijava-text">
+      <div class=" prijava-naslov py-3"><strong>MojBon.</strong></div>
+      <div class="col-md-7 col-lg-5 col-xl-5  prijava-text">
         @if(session()->has("success")) 
           <div class="alert alert-light">{{session()->get("uspeh")}}</div>
         @endif

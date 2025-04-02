@@ -31,7 +31,7 @@
     
     <div data-mdb-input-init class="form-outline mb-4 barva-okvira-racun">
         <input type="password" id="racunPos"  class="form-control form-control-lg" name="password" required/>
-        <label class="form-label" for="racunPos">Tranutno geslo</label>
+        <label class="form-label" for="racunPos">Trenutno geslo</label>
     </div>
 
     <div data-mdb-input-init class="form-outline mb-4 barva-okvira-racun">
