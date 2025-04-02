@@ -15,6 +15,7 @@ use Maatwebsite\Excel\Facades\Excel;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\WelcomeMail;
+use App\Imports\UsersImport;
 
 
 class AdminController extends Controller
@@ -95,6 +96,15 @@ class AdminController extends Controller
         $month = $request->input('month');
         $year = $request->input('year');
         return Excel::download(new QRScansExport($month, $year), 'qr_scans.xlsx');
+    }
+
+    public function importUsers(Request $request)
+    {
+        $request->validate([
+            'file' => 'required|mimes:xlsx,csv',
+        ]);
+
+        Excel::import(new UsersImport, $request->file('file'));
     }
 
     public function getMonthlyScanCount()

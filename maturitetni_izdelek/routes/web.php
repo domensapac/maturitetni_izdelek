@@ -73,3 +73,5 @@ Route::get('/logout', function () {
 
 //Za Export
 Route::get('/admin/export-qr-scans', [AdminController::class, 'exportQRScans'])->name('admin.export.qr-scans');
+//Za Import
+Route::post('/admin/import-users', [AdminController::class, 'importUsers']);
