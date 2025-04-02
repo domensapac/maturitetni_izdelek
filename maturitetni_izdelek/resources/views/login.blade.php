@@ -32,7 +32,7 @@
             <label class="form-label" for="form1Example23">Geslo</label>
           </div>
           <div class=" d-flex align-items-center justify-content-center">
-          <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-lg btn-block" style="background-color: rgb(32,32,32)">Prijava</button>
+          <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-lg " style="color:white; background-color: rgb(32,32,32)">Prijava</button>
           </div>
         </form>
       </div>
