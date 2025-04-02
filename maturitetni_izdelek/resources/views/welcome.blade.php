@@ -25,7 +25,7 @@
     <p class="user_name"> {{ Auth::user()->name ?? 'Gost' }} {{ Auth::user()->surname ?? '' }} </p>
 
     <div class="qr_container">
-            <svg style="background-color:white" width="330" height="330" viewBox="0 0 330 330">
+            <svg  width="330" height="330" viewBox="0 0 330 330">
                 <path d="M 10 60 L 10 10 L 60 10" stroke="white" stroke-width="8" fill="none"/>
                 <path d="M 270 10 L 320 10 L 320 60" stroke="white" stroke-width="8" fill="none"/>
                 <path d="M 10 270 L 10 320 L 60 320" stroke="white" stroke-width="8" fill="none"/>
