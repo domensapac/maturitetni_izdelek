@@ -12,11 +12,11 @@
       @include('partials.navbar')
     </section>
 
-    <div class="container text-center">
-      <div class="row align-items-center">
-        <div class="col">
-          <button onclick="setPrikaz(0)" class="btn">Add User</button>
-          <button onclick="setPrikaz(1)" class="btn">View Records</button>
+    <div class=" admin-container text-center">
+      <div class="row align-items-center" style="margin-right:0;">
+        <div class="col" style="display:flex; flex-direction:column">
+          <button id="admin-button" onclick="setPrikaz(0)" class="btn">Add User</button>
+          <button id="admin-button" onclick="setPrikaz(1)" class="btn">View Records</button>
         </div>
           <div id="content" class="col">
             <h2>Izberi funkcijo iz menija</h2>

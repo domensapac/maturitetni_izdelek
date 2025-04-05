@@ -13,7 +13,7 @@
   <div class="container">
     <div class="row d-flex align-items-center justify-content-center h-100">
       <div class=" prijava-naslov py-3"><strong>MojBon.</strong></div>
-      <div class="col-md-7 col-lg-5 col-xl-5  prijava-text">
+      <div class="col-md-7 col-lg-5 col-xl-5 mt-4 prijava-text">
         @if(session()->has("success")) 
           <div class="alert alert-light">{{session()->get("uspeh")}}</div>
         @endif

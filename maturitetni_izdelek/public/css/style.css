@@ -156,6 +156,15 @@ body {
     margin-bottom: 80px;
 }
 
+.admin-container {
+    background-color: rgb(20, 20, 20);
+    color: white;
+}
+
+#admin-button {
+    color: white;
+}
+
 .text_box {
     width: 50%;
     padding: 20px;
@@ -229,12 +238,20 @@ body {
     }
 
     .navbar-links1 {
-        display: none;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.4s ease, opacity 0.4s ease;
         width: 100%;
     }
 
     .navbar-links1 li:hover {
         color: rgb(32, 32, 32);
+    }
+
+    .navbar-links1.active {
+        max-height: 500px; /* prilagodi po potrebi */
+        opacity: 1;
     }
 
     .navbar1 {
